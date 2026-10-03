@@ -41,9 +41,10 @@ def predict():
         category = "Very Severe Cyclonic Storm"
 
     return jsonify({
-        "predicted_wind": round(float(wind_speed), 2),
-        "category": category
-    })
+    "predicted_wind": round(float(wind_speed), 2),
+    "category": category,
+    "confidence": 78
+})
 
 if __name__ == "__main__":
     app.run(debug=True)
