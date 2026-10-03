@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cyclone AI | Tropical Cyclone Analysis</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🌪
+            </div>
+
+            <div>
+                <h2>Cyclone AI</h2>
+                <span>Satellite Intelligence</span>
+            </div>
+
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#analysis">Analysis</a>
+
+            <a href="#system">System</a>
+
+            <a href="#about">About</a>
+
+        </div>
+
+
+        <button class="nav-button">
+            Launch AI
+        </button>
+
+    </nav>
+
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="status-badge">
+
+                <span class="status-dot"></span>
+
+                AI-POWERED SATELLITE ANALYSIS
+
+            </div>
+
+
+            <h1>
+
+                Understanding
+                <span>Tropical Cyclones</span>
+                Through AI
+
+            </h1>
+
+
+            <p>
+
+                An intelligent system for identification,
+                classification and prediction of tropical cyclone
+                patterns using multi-source satellite data.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#analysis" class="primary-button">
+
+                    Start Analysis →
+
+                </a>
+
+
+                <a href="#system" class="secondary-button">
+
+                    Explore System
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-visual">
+
+            <div class="radar">
+
+                <div class="radar-circle circle-1"></div>
+
+                <div class="radar-circle circle-2"></div>
+
+                <div class="radar-circle circle-3"></div>
+
+                <div class="radar-center">
+                    🌪
+                </div>
+
+                <div class="radar-line"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- STATS -->
+
+    <section class="stats">
+
+        <div class="stat-card">
+
+            <span class="stat-number">AI</span>
+
+            <span class="stat-label">
+                Intelligent Analysis
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span class="stat-number">Multi</span>
+
+            <span class="stat-label">
+                Source Satellite Data
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span class="stat-number">3</span>
+
+            <span class="stat-label">
+                Core Analysis Tasks
+            </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <span class="stat-number">24/7</span>
+
+            <span class="stat-label">
+                Automated Monitoring
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ANALYSIS SECTION -->
+
+    <section class="analysis-section" id="analysis">
+
+        <div class="section-heading">
+
+            <div class="small-heading">
+                SATELLITE ANALYSIS
+            </div>
+
+            <h2>
+                Analyze a Satellite Image
+            </h2>
+
+            <p>
+                Upload a satellite image and prepare it
+                for AI-powered cyclone analysis.
+            </p>
+
+        </div>
+
+
+        <div class="analysis-grid">
+
+
+            <!-- UPLOAD CARD -->
+
+            <div class="upload-card">
+
+                <div class="upload-icon">
+                    ↑
+                </div>
+
+
+                <h3>
+                    Upload Satellite Image
+                </h3>
+
+
+                <p>
+                    Drag and drop your image here or
+                    select a file from your computer.
+                </p>
+
+
+                <input type="file" id="imageInput" accept=".nc">
+
+
+                <label
+                    for="imageInput"
+                    class="upload-button"
+                >
+                    Choose Satellite Image
+                </label>
+
+
+                <div
+                    id="fileName"
+                    class="file-name"
+                >
+                    No image selected
+                </div>
+
+            </div>
+
+
+
+            <!-- PREVIEW CARD -->
+
+            <div class="preview-card">
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="small-heading">
+                            IMAGE PREVIEW
+                        </span>
+
+                        <h3>
+                            Satellite Observation
+                        </h3>
+
+                    </div>
+
+
+                    <span class="preview-status">
+                        READY
+                    </span>
+
+                </div>
+
+
+                <div class="image-preview" id="imagePreview">
+
+                    <div class="preview-placeholder">
+
+                        <div class="preview-icon">
+                            ◉
+                        </div>
+
+                        <p>
+                            Satellite image preview
+                        </p>
+
+                        <span>
+                            Your uploaded image will appear here
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="analyze-button"
+                    id="analyzeButton"
+                    disabled
+                >
+
+                    Analyze with AI →
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SYSTEM SECTION -->
+
+    <section class="system-section" id="system">
+
+        <div class="section-heading">
+
+            <div class="small-heading">
+                SYSTEM CAPABILITIES
+            </div>
+
+            <h2>
+                From Satellite Data to AI Prediction
+            </h2>
+
+            <p>
+                The system is designed to process satellite
+                observations through multiple AI stages.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">
+                    01
+                </div>
+
+                <h3>
+                    Identification
+                </h3>
+
+                <p>
+                    Identify whether the observed satellite
+                    pattern contains a tropical cyclone.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">
+                    02
+                </div>
+
+                <h3>
+                    Classification
+                </h3>
+
+                <p>
+                    Analyze cyclone patterns and classify
+                    the observed system using machine learning.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">
+                    03
+                </div>
+
+                <h3>
+                    Prediction
+                </h3>
+
+                <p>
+                    Use learned patterns to support cyclone
+                    intensity and behavior prediction.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-number">
+                    04
+                </div>
+
+                <h3>
+                    Visualization
+                </h3>
+
+                <p>
+                    Present AI results through an interactive
+                    and easy-to-understand dashboard.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ABOUT -->
+
+    <section class="about-section" id="about">
+
+        <div class="about-content">
+
+            <div class="small-heading">
+                ABOUT THE PROJECT
+            </div>
+
+            <h2>
+                AI for Tropical Cyclone Intelligence
+            </h2>
+
+            <p>
+
+                This project explores the use of artificial
+                intelligence and multi-source satellite data
+                to support tropical cyclone identification,
+                classification and prediction.
+
+            </p>
+
+            <p>
+
+                The final system will combine a web interface,
+                data processing pipeline and machine learning
+                model into a single platform.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            🌪 Cyclone AI
+        </div>
+
+        <p>
+            AI/ML Based Tropical Cyclone Analysis System
+        </p>
+
+        <p class="copyright">
+            Academic Project
+        </p>
+
+    </footer>
+
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        const imageInput =
+            document.getElementById("imageInput");
+
+        const imagePreview =
+            document.getElementById("imagePreview");
+
+        const fileName =
+            document.getElementById("fileName");
+
+        const analyzeButton =
+            document.getElementById("analyzeButton");
+
+
+        imageInput.addEventListener("change", function () {
+
+            const file = this.files[0];
+
+
+            if (file) {
+
+                fileName.textContent =
+                    file.name;
+
+                analyzeButton.disabled = false;
+
+
+                const reader =
+                    new FileReader();
+
+
+                imagePreview.innerHTML = `
+                        <div style="padding:40px;">
+                        <h3>${file.name}</h3>
+                        <p>Satellite data file ready for analysis</p>
+                        </div>
+                `;
+
+            }
+
+        });
+
+
+        analyzeButton.addEventListener("click", async function () {
+
+            const file = imageInput.files[0];
+
+            if (!file) {
+            alert("Please select a satellite file first.");
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append("file", file);
+
+        analyzeButton.innerHTML = "Analyzing...";
+        analyzeButton.disabled = true;
+
+        try {
+
+                const response = await fetch("/predict", {
+                method: "POST",
+                body: formData
+            });
+
+        const result = await response.json();
+
+        imagePreview.innerHTML = `
+            <div style="padding:30px; text-align:center;">
+                <h2>Analysis Complete</h2>
+                <h3>Predicted Wind Speed</h3>
+                <p style="font-size:28px;">
+                    ${result.predicted_wind} knots
+                </p>
+
+                <h3>Cyclone Category</h3>
+                <p style="font-size:24px;">
+                    ${result.category}
+                </p>
+            </div>
+        `;
+
+    } catch (error) {
+
+        alert("Prediction failed.");
+
+        console.log(error);
+
+    }
+
+    analyzeButton.innerHTML = "Analyze with AI →";
+    analyzeButton.disabled = false;
+
+    });
+
+    </script>
+
+
+</body>
+
+</html>
