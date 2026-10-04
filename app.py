@@ -23,7 +23,11 @@ def predict():
 
     file.save(filepath)
 
-    wind_speed = predict_wind(filepath)
+    try:
+        wind_speed = predict_wind(filepath)
+    except Exception as e:
+        print("ERROR:", e)
+        raise
 
     if wind_speed < 34:
         category = "Tropical Depression"
@@ -41,10 +45,9 @@ def predict():
         category = "Very Severe Cyclonic Storm"
 
     return jsonify({
-    "predicted_wind": round(float(wind_speed), 2),
-    "category": category,
-    "confidence": 78
-})
+        "predicted_wind": round(float(wind_speed), 2),
+        "category": category
+    })
 
 if __name__ == "__main__":
     app.run(debug=True)
