@@ -229,7 +229,7 @@
                 </p>
 
 
-                <input type="file" id="imageInput" accept=".nc">
+                <input type="file" id="imageInput">
 
 
                 <label
@@ -560,142 +560,84 @@
             color = "#ff3333";
 
         imagePreview.innerHTML = `
-        <div style="padding:25px;text-align:center;color:white;">
+<div style="padding:25px;text-align:center;color:white;">
 
-            <h2 style="
-                font-size:32px;
-                margin-bottom:20px;
-                color:#00d4ff;
-            ">
-                Cyclone Analysis Report
-            </h2>
+    <h2 style="font-size:32px;color:#00d4ff;">
+        Cyclone Analysis Report
+    </h2>
 
-            <div style="
-                background:rgba(255,255,255,0.05);
-                padding:20px;
-                border-radius:20px;
-                margin-bottom:20px;
-            ">
-                <p style="
-                    font-size:14px;
-                    color:#9aa4b2;
-                ">
-                    SATELLITE FILE
-                </p>
+    <img
+        src="/static/images/latest_satellite.png?${Date.now()}"
+        style="
+            width:100%;
+            max-height:300px;
+            object-fit:contain;
+            border-radius:12px;
+            margin-bottom:20px;
+        "
+    >
 
-                <p style="
-                    font-size:18px;
-                    font-weight:600;
-                    word-break:break-word;
-                ">
-                    ${file.name}
-                </p>
-            </div>
+    <p><strong>Wind Speed:</strong> ${result.predicted_wind} knots</p>
 
-            <div style="
-                display:flex;
-                justify-content:center;
-                gap:20px;
-                flex-wrap:wrap;
-            ">
+    <p>
+        <strong>Category:</strong>
+        <span style="color:${color};font-weight:bold;">
+            ${result.category}
+        </span>
+    </p>
 
+    <p>
+        <strong>Confidence:</strong>
+        ${result.confidence}%
+    </p>
+
+    <p>
+        <strong>Model:</strong>
+        Random Forest Regressor
+    </p>
+
+    <p style="color:#00ff99;">
+        Analysis Completed ✓
+    </p>
+
+</div>
+`;
+    }
+        
+        catch(error) {
+
+            console.error(error);
+
+            imagePreview.innerHTML = `
                 <div style="
+                    margin-top:25px;
                     background:rgba(255,255,255,0.05);
                     padding:20px;
                     border-radius:20px;
-                    min-width:220px;
+                    text-align:center;
+                    color:white;
                 ">
-                    <p style="color:#9aa4b2;">
-                        PREDICTED WIND SPEED
+                    <h2 style="color:#ff5555;">
+                        Analysis Failed
+                    </h2>
+
+                    <p>
+                        Check Flask terminal for errors.
                     </p>
-
-                    <h1 style="
-                        font-size:42px;
-                        color:#00d4ff;
-                    ">
-                        ${result.predicted_wind}
-                    </h1>
-
-                    <p>knots</p>
-
                 </div>
+            `;
+        }
+        finally {
 
-                <div style="
-                    background:rgba(255,255,255,0.05);
-                    padding:20px;
-                    border-radius:20px;
-                    min-width:220px;
-                ">
+            analyzeButton.innerHTML =
+                "Analyze with AI →";
 
-                    <p style="color:#9aa4b2;">
-                        CYCLONE CATEGORY
-                    </p>
+            analyzeButton.disabled = false;
+        }
 
-                    <div style="
-                        margin-top:15px;
-                        background:${color};
-                        color:white;
-                        padding:12px;
-                        border-radius:30px;
-                        font-weight:bold;
-                    ">
-                        ${result.category}
-                    </div>
+        });
 
-                </div>
-
-            </div>
-
-            <div style="
-                margin-top:25px;
-                background:rgba(255,255,255,0.05);
-                padding:20px;
-                border-radius:20px;
-            ">
-
-                <p>
-                    Model Used:
-                    <strong>Random Forest Regressor</strong>
-                </p>
-
-                <p>
-                    Analysis Status:
-                    <strong style="color:#00ff99;">
-                        Completed ✓
-                    </strong>
-                </p>
-
-            </div>
-
-        </div>
-        `;
-
-    }
-
-    catch(error) {
-
-        console.error(error);
-
-        imagePreview.innerHTML = `
-        <div style="padding:30px;text-align:center;">
-            <h2>Prediction Failed</h2>
-            <p>Check Flask terminal for errors.</p>
-        </div>
-        `;
-    }
-
-    finally {
-
-        analyzeButton.innerHTML =
-            "Analyze with AI →";
-
-        analyzeButton.disabled = false;
-    }
-
-});
-    </script>
-
-
+</script>
 </body>
 
 </html>

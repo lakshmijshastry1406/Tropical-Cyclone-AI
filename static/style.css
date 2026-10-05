@@ -764,7 +764,9 @@ input[type="file"] {
 
 .image-preview {
 
-    height: 280px;
+    min-height: 550px;
+
+    height: auto;
 
     border-radius: 12px;
 
@@ -772,16 +774,17 @@ input[type="file"] {
 
     display: flex;
 
-    align-items: center;
+    align-items: flex-start;
 
     justify-content: center;
 
-    overflow: hidden;
+    overflow-y: auto;
 
     background: rgba(0,0,0,0.18);
 
-}
+    padding: 20px;
 
+}
 
 .preview-placeholder {
 
